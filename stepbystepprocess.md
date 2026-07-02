@@ -488,6 +488,39 @@ $PY = "python"
 ```
 *Expected:* a summary table — **4 auto-resolved** (Password Reset ×2, VPN, Disk Space), **4 escalated** (Access Request, Software, Email, Printer).
 
+### Step 2.5 — Create a NEW ticket LIVE and let the LLM resolve it (crowd favourite)
+> This is the "wow" moment: raise a brand-new ticket in front of the audience and
+> watch the **online LLM** classify + resolve it end-to-end. On your personal
+> laptop (where the Ollama endpoint is reachable) this runs through the real LLM.
+
+**Option A — one command (add + process immediately):**
+```powershell
+& $PY main.py --add-ticket --short "Forgot my password and locked out" --desc "User returned from leave and cannot sign in to Windows; needs a password reset to access email." --priority High --run
+```
+*What happens:* a new ticket (e.g. `INC0012009`) is appended with status `New`, then
+the pipeline runs. On the summary table it should be classified **Password Reset**
+and **auto-resolved** (Password Reset is whitelisted).
+
+**Option B — interactive (type the details when prompted):**
+```powershell
+& $PY main.py --add-ticket
+# You'll be asked for: Short description, Description, Priority. Then:
+& $PY main.py
+```
+
+**Show the safety guardrail — raise a ticket that MUST go to a human:**
+```powershell
+& $PY main.py --add-ticket --short "Need admin access to finance shared folder" --desc "Requesting write/admin permissions to the finance department shared drive." --priority Medium --run
+```
+*Talking point:* even with high confidence, **Access Request** is on the
+`always_human` list, so the agent **escalates** instead of auto-resolving —
+demonstrating the responsible-AI guardrail.
+
+> **Confirm you're using the online LLM first:** run **Step 0.5** and make sure it
+> prints `LLM online: True` and `RAG backend: ollama` before this demo. If it says
+> `False`/`tfidf`, the network to the Ollama endpoint isn't reachable — the demo
+> still works, but via the offline fallback.
+
 ### Step 3 — Show the audit trail (explainability)
 ```powershell
 # Pretty-print the last few audit entries (per-stage decision trail)

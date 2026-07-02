@@ -31,6 +31,8 @@ Expected output: a summary table showing **4 auto-resolved** (Password Reset ×2
 | `python main.py` | Process all tickets currently in status `New` |
 | `python main.py --reset-run` | Reset all tickets to `New`, then process (best for repeatable demos) |
 | `python main.py --reset` | Reset tickets to `New` only (no processing) |
+| `python main.py --add-ticket` | Add a new ticket to the queue (interactive prompts) |
+| `python main.py --add-ticket --short "..." --desc "..." --priority High --run` | Add a ticket from the CLI and process it immediately (great for live demos) |
 
 ### Testing
 
