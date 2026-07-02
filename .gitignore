@@ -21,3 +21,6 @@ logs/*.jsonl
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Office temporary lock files
+~$*
