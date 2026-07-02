@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Secrets & local config
+.env
+
+# RAG vector store (regenerated from knowledge_base/)
+chroma_db/
+.chroma/
+
+# Logs
+logs/*.log
+logs/*.jsonl
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

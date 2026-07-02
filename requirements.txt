@@ -1,0 +1,17 @@
+# Core agentic stack
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-ollama>=0.2.0
+
+# RAG
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# Config, HTTP, utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+truststore>=0.9.0  # use OS cert store (corporate SSL proxies)
+
+# Presentation generation (demo deck)
+python-pptx>=0.6.23

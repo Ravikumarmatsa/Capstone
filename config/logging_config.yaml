@@ -1,0 +1,17 @@
+# Logging configuration for the auto-resolution agent.
+# Two outputs:
+#   1. Human-readable console log (level configurable).
+#   2. Structured JSON audit trail (one JSON object per line) for explainability.
+
+console:
+  level: INFO
+
+audit:
+  # Machine-readable audit trail of every agent decision.
+  path: logs/audit.jsonl
+  level: INFO
+
+run_log:
+  # Full human-readable run log.
+  path: logs/run.log
+  level: DEBUG

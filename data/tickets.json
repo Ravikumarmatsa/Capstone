@@ -1,0 +1,90 @@
+[
+  {
+    "id": "INC0012001",
+    "short_description": "Cannot log in - forgot my password",
+    "description": "User reports they are locked out of their Windows account after several failed login attempts. They forgot their password after returning from vacation and need it reset to access email and the corporate portal.",
+    "category": null,
+    "priority": "High",
+    "status": "Resolved",
+    "assigned_to": "auto-resolution-agent",
+    "created_at": "2026-07-01T08:05:00Z",
+    "resolution_comment": "[Auto-Resolution Agent] Auto-resolved via 'reset_password'.\nCategory: Password Reset (confidence 0.85).\nSteps applied:\n1. Verify the user's identity (employee ID + security question / manager confirmation).\n2. In Active Directory / IAM, locate the user account.\n3. Reset the password to a secure temporary value and set \"must change at next logon\".\n4. If the account is locked, unlock it.\n5. Send the temporary password through a secure channel (SMS / secondary email).\n6. Confirm the user can log in and change the password."
+  },
+  {
+    "id": "INC0012002",
+    "short_description": "VPN keeps disconnecting when working from home",
+    "description": "Remote user says the GlobalConnect VPN client authenticates but drops the connection every few minutes. Internet works fine otherwise. Started this morning after a laptop restart. Needs stable VPN to reach internal apps.",
+    "category": null,
+    "priority": "High",
+    "status": "Resolved",
+    "assigned_to": "auto-resolution-agent",
+    "created_at": "2026-07-01T08:12:00Z",
+    "resolution_comment": "[Auto-Resolution Agent] Auto-resolved via 'reset_vpn_session'.\nCategory: VPN Connectivity (confidence 0.85).\nSteps applied:\n1. Ask the user to fully quit the VPN client (not just disconnect).\n2. On the VPN concentrator, terminate any stale sessions for the user.\n3. Clear the cached VPN profile / token on the client.\n4. Ensure the VPN client is on the approved latest version; update if needed.\n5. Reconnect and confirm the tunnel is stable for 5+ minutes.\n6. If unstable, switch network (e.g., mobile hotspot) to isolate local Wi-Fi issues."
+  },
+  {
+    "id": "INC0012003",
+    "short_description": "Low disk space warning on C drive",
+    "description": "User receives 'Low Disk Space' warnings on the C: drive of their Windows laptop. Only 400 MB free. Cannot save files or install updates. Requesting cleanup of temporary files and cache.",
+    "category": null,
+    "priority": "Medium",
+    "status": "Resolved",
+    "assigned_to": "auto-resolution-agent",
+    "created_at": "2026-07-01T08:20:00Z",
+    "resolution_comment": "[Auto-Resolution Agent] Auto-resolved via 'cleanup_disk'.\nCategory: Disk Space Cleanup (confidence 0.85).\nSteps applied:\n1. Run Disk Cleanup / Storage Sense to remove temporary files.\n2. Clear `%TEMP%`, browser caches, and the Recycle Bin.\n3. Remove old Windows Update cache (`SoftwareDistribution\\Download`).\n4. Identify large files with a disk usage scan; advise the user on removals.\n5. Confirm at least 10% free space is restored."
+  },
+  {
+    "id": "INC0012004",
+    "short_description": "Need admin access to the finance shared folder",
+    "description": "User requests write access to the \\\\corp\\finance\\reports shared drive to upload monthly reports. They currently have read-only access. Manager approval may be required.",
+    "category": null,
+    "priority": "Medium",
+    "status": "In Progress",
+    "assigned_to": "service-desk-queue",
+    "created_at": "2026-07-01T08:31:00Z",
+    "resolution_comment": "[Auto-Resolution Agent] Recommended steps (human review required).\nCategory: Access Request (confidence 0.85). Reason: Category always requires human approval.\nRecommended steps:\n1. Verify the requester's identity and current access level.\n2. Identify the resource owner / approving manager.\n3. Route the request for approval (ticket comment + assignment).\n4. On approval, grant the minimum access required (least privilege).\n5. Record the approval and set an access review/expiry date.\n6. Confirm access with the user."
+  },
+  {
+    "id": "INC0012005",
+    "short_description": "Please install Node.js and VS Code on my machine",
+    "description": "New developer needs Node.js LTS and Visual Studio Code installed on their workstation to start onboarding tasks. Standard developer toolset. No admin rights on the machine.",
+    "category": null,
+    "priority": "Low",
+    "status": "In Progress",
+    "assigned_to": "service-desk-queue",
+    "created_at": "2026-07-01T08:44:00Z",
+    "resolution_comment": "[Auto-Resolution Agent] Recommended steps (human review required).\nCategory: Software Installation (confidence 0.85). Reason: Category is not on the auto-resolve whitelist.\nRecommended steps:\n1. Confirm the software is on the approved catalog.\n2. Verify license availability (if commercial).\n3. Deploy via the software distribution tool (e.g., SCCM / Intune) or schedule a technician.\n4. For standard free tools, push the packaged installer.\n5. Verify the application launches and is correctly configured."
+  },
+  {
+    "id": "INC0012006",
+    "short_description": "Outlook not sending or receiving emails",
+    "description": "User's Outlook shows 'Disconnected' and mail is stuck in the Outbox. Webmail works fine. Suspect a profile or cached-mode issue. Needs email restored urgently for client communication.",
+    "category": null,
+    "priority": "High",
+    "status": "In Progress",
+    "assigned_to": "service-desk-queue",
+    "created_at": "2026-07-01T09:02:00Z",
+    "resolution_comment": "[Auto-Resolution Agent] Recommended steps (human review required).\nCategory: Email Issue (confidence 0.85). Reason: Category is not on the auto-resolve whitelist.\nRecommended steps:\n1. Confirm webmail works (isolates client vs. server).\n2. Restart Outlook; test Online vs. Cached Exchange Mode.\n3. Repair or recreate the Outlook profile.\n4. Rebuild the OST file if corrupt.\n5. Verify send/receive is restored."
+  },
+  {
+    "id": "INC0012007",
+    "short_description": "Office printer shows offline",
+    "description": "The 3rd floor HP LaserJet printer (PRT-3F-02) shows as offline for multiple users. Print jobs are queued but not printing. Printer powers on and displays 'Ready'. Requesting the print queue and spooler be checked.",
+    "category": null,
+    "priority": "Medium",
+    "status": "In Progress",
+    "assigned_to": "service-desk-queue",
+    "created_at": "2026-07-01T09:18:00Z",
+    "resolution_comment": "[Auto-Resolution Agent] Recommended steps (human review required).\nCategory: Printer Issue (confidence 0.85). Reason: Category is not on the auto-resolve whitelist.\nRecommended steps:\n1. Verify the printer is powered on and network-reachable (ping the IP).\n2. On the print server, clear the stuck queue for the printer.\n3. Restart the Print Spooler service.\n4. Re-share / reconnect the printer if the IP changed.\n5. Send a test print to confirm."
+  },
+  {
+    "id": "INC0012008",
+    "short_description": "Account locked out again",
+    "description": "User's Active Directory account is locked. They can see the 'account locked' message at sign-in. No recent password change. Requesting an unlock and to verify no repeated lockouts from a stale device.",
+    "category": null,
+    "priority": "High",
+    "status": "Resolved",
+    "assigned_to": "auto-resolution-agent",
+    "created_at": "2026-07-01T09:25:00Z",
+    "resolution_comment": "[Auto-Resolution Agent] Auto-resolved via 'reset_password'.\nCategory: Password Reset (confidence 0.85).\nSteps applied:\n1. Verify the user's identity (employee ID + security question / manager confirmation).\n2. In Active Directory / IAM, locate the user account.\n3. Reset the password to a secure temporary value and set \"must change at next logon\".\n4. If the account is locked, unlock it.\n5. Send the temporary password through a secure channel (SMS / secondary email).\n6. Confirm the user can log in and change the password."
+  }
+]

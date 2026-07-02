@@ -1,0 +1,47 @@
+# ServiceNow & ticket-handling configuration
+# Credentials are read from environment variables (.env), NOT stored here.
+
+servicenow:
+  # When mock_mode is true, tickets are read from / written to data/tickets.json
+  # instead of a live ServiceNow instance. Set to false only when real
+  # SERVICENOW_* environment variables are configured.
+  mock_mode: true
+  instance_url_env: SERVICENOW_INSTANCE_URL
+  username_env: SERVICENOW_USERNAME
+  password_env: SERVICENOW_PASSWORD
+  table: incident
+  api_version: v2
+
+# Ticket categories the agent understands.
+categories:
+  - Password Reset
+  - VPN Connectivity
+  - Software Installation
+  - Disk Space Cleanup
+  - Access Request
+  - Email Issue
+  - Printer Issue
+
+# Decision policy: which categories may be auto-resolved and the minimum
+# classification confidence required before the Execution Agent acts.
+auto_resolution:
+  confidence_threshold: 0.80
+  whitelist:
+    - Password Reset
+    - VPN Connectivity
+    - Disk Space Cleanup
+  # Categories that always require a human, regardless of confidence.
+  always_human:
+    - Access Request
+
+# Retrieval settings for the RAG agent.
+retrieval:
+  top_k: 3
+  knowledge_base_dir: knowledge_base
+  vector_store_dir: chroma_db
+  # Embedding backend: auto | ollama | tfidf
+  #   auto   -> use the Ollama endpoint if reachable, else offline TF-IDF
+  #   ollama -> require the Ollama endpoint
+  #   tfidf  -> fully offline (no network / no model downloads)
+  embedding_backend: auto
+

@@ -1,0 +1,21 @@
+You are an IT support triage assistant. Classify the following IT ticket.
+
+Allowed categories (choose exactly one):
+- Password Reset
+- VPN Connectivity
+- Software Installation
+- Disk Space Cleanup
+- Access Request
+- Email Issue
+- Printer Issue
+
+Assess severity as one of: Low, Medium, High, Critical.
+Provide a confidence between 0.0 and 1.0 for your classification.
+
+Ticket:
+- Short description: {short_description}
+- Description: {description}
+- Reported priority: {priority}
+
+Respond ONLY with a valid JSON object, no extra text, in exactly this shape:
+{{"category": "<one allowed category>", "severity": "<Low|Medium|High|Critical>", "confidence": <float 0-1>, "reasoning": "<one short sentence>"}}
