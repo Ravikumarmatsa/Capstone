@@ -1,6 +1,6 @@
 """LLM access via the provided Ollama endpoint (llama3.2).
 
-Wraps ``langchain_ollama.ChatOllama`` and adds a helper that reliably parses
+Wraps ``langchain_ollama.ChatOllama`` and adds a helper function that reliably parses
 JSON out of the model's response (LLMs sometimes wrap JSON in prose or code
 fences).
 """
