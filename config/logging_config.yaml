@@ -1,5 +1,5 @@
-# Logging configuration for the auto-resolution agent.
-# Two outputs:
+# Logging configuration details for the auto-resolution agent.
+# 2 outputs:
 #   1. Human-readable console log (level configurable).
 #   2. Structured JSON audit trail (one JSON object per line) for explainability.
 
