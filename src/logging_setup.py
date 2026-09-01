@@ -3,7 +3,7 @@
 Provides:
   * a human-readable console/run logger, and
   * a structured JSON audit trail (one JSON object per line) that records every
-    agent decision for explainability.
+    agents decision for explainability.
 """
 from __future__ import annotations
 
