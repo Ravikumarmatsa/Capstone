@@ -3,7 +3,7 @@
 Two modes (selected by ``config/servicenow_config.yaml`` -> mock_mode):
 
   * **mock mode** (default): reads/writes tickets in ``data/tickets.json`` so the
-    project runs fully offline for the demo — no credentials required.
+    project runs fully offline for the demo — no credential required.
   * **live mode**: a thin REST client stub for the ServiceNow Table API. It is
     functional but only used when SERVICENOW_* environment variables are set.
 
