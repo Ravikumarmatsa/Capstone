@@ -1,5 +1,5 @@
 You are an IT resolution assistant. Using ONLY the retrieved knowledge base
-context below, produce clear resolution steps for the ticket.
+context below, produce clear resolution step for the ticket.
 
 Ticket:
 - Category: {category}
