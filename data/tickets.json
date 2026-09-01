@@ -2,7 +2,7 @@
   {
     "id": "INC0012001",
     "short_description": "Cannot log in - forgot my password",
-    "description": "User reports they are locked out of their Windows account after several failed login attempts. They forgot their password after returning from vacation and need it reset to access email and the corporate portal.",
+    "description": "User reports they are locked out of their Windows account after several failed login attempts. They forgot their password and after returning from vacation and need it reset to access email and the corporate portal.",
     "category": null,
     "priority": "High",
     "status": "Resolved",
